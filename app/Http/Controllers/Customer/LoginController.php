@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Customer;
 
-use App\Http\Requests\AdminLoginRequest;
+use App\Http\Requests\CustomerLoginRequest;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -16,19 +17,19 @@ class LoginController extends Controller
      */
     public function create(): View
     {
-        return view('admin.auth.login');
+        return view('customer.auth.login');
     }
- 
+
     /**
      * ログイン
      */
-    public function store(AdminLoginRequest $request): RedirectResponse
+    public function store(CustomerLoginRequest $request): RedirectResponse
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.dashboard'));
+        return redirect()->intended(route('customer.dashboard'));
     }
 
     /**
@@ -36,7 +37,7 @@ class LoginController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('admin')->logout();
+        Auth::guard('customer')->logout();
 
         $request->session()->invalidate();
 
