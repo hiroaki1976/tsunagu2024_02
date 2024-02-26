@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\DashboardController;
 
@@ -32,6 +34,20 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+Route::resource('bbs', PostsController::class, ['only' => ['index', 'show', 'create', 'store', 'edit', 'update', 'destroy']]);
+
+// Route::get('/bbs', [PostsController::class, 'index'])->name('bbs.index');
+
+Route::get('/posts/{post}/edit', [PostsController::class, 'edit'])->name('posts.edit');
+
+Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
+
+Route::resource('comment', 'CommentsController', ['only' => ['store']]);
+
+Route::post('/comment', [CommentsController::class, 'store'])->name('comment.store');
+
+Route::delete('/posts/{post}', [PostsController::class, 'destroy'])->name('posts.destroy');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
