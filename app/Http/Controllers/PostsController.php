@@ -65,6 +65,8 @@ class PostsController extends Controller
             'subject' => $request->subject,
             'message' => $request->message,
             'category_id' => $request->category_id,
+            // 現在認証されているユーザーのIDを取得して設定
+            'user_id' => auth()->id(),
         ];
     
         $post = new Post;

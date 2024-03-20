@@ -13,16 +13,56 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" name="zipcloud" class="mt-6 space-y-6">
         @csrf
         @method('patch')
+        @push('scripts')
+        <script src="{{ asset('js/zipcloud.js') }}" defer></script>
+        @endpush
 
+        <!-- Office Name -->
+        <div>
+            <x-input-label for="officename" :value="__('Officename')" />
+            <x-text-input id="officename" class="block mt-1 w-full" type="text" name="officename" :value="old('officename', $user->officename)" required autofocus autocomplete="officename" />
+            <x-input-error :messages="$errors->get('officename')" class="mt-2" />
+        </div>
+
+        <!-- Post Code -->
+        <div>
+            <x-input-label for="postcode" :value="__('Postcode')" />
+            <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode', $user->postcode)" autofocus autocomplete="postcode" placeholder="郵便番号" />
+            <x-input-error :messages="$errors->get('postcode')" class="mt-2" />
+        </div>
+
+        <!-- Prefecture -->
+        <div>
+            <x-input-label for="prefecture" :value="__('Prefecture')" />
+            <x-text-input id="prefecture" class="block mt-1 w-full" type="text" name="prefecture" :value="old('prefecture', $user->prefecture)" autofocus autocomplete="prefecture" placeholder="都道府県" />
+            <x-input-error :messages="$errors->get('prefecture')" class="mt-2" />
+        </div>
+
+        <!-- City -->
+        <div>
+            <x-input-label for="city" :value="__('City')" />
+            <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city', $user->city)" autofocus autocomplete="city" placeholder="市区町村" />
+            <x-input-error :messages="$errors->get('city')" class="mt-2" />
+        </div>
+
+        <!-- Town -->
+        <div>
+            <x-input-label for="town" :value="__('Town')" />
+            <x-text-input id="town" class="block mt-1 w-full" type="text" name="town" :value="old('town', $user->town)" autofocus autocomplete="town" placeholder="町名など" />
+            <x-input-error :messages="$errors->get('town')" class="mt-2" />
+        </div>
+
+        <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
+        <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />

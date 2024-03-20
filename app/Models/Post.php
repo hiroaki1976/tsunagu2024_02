@@ -12,7 +12,8 @@ class Post extends Model
         'name',
         'subject',
         'message', 
-        'category_id'
+        'category_id',
+        'user_id',
     ];
 
     public function comments()
