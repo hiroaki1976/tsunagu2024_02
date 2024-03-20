@@ -1,6 +1,6 @@
 @extends('layouts.bbslayout')
 
-@section('title', 'LaravelPjt BBS 投稿の詳細ページ')
+@section('title', 'Tsunagu 投稿の詳細ページ')
 @section('keywords', 'キーワード1,キーワード2,キーワード3')
 @section('description', '投稿詳細ページの説明文')
 @section('pageCss')
@@ -12,6 +12,8 @@
 @section('content')
 <div class="container mt-4">
     <div class="border p-4">
+        {{-- 編集・削除ボタン表示の条件分岐 --}}
+        @if(auth()->check() && (auth()->user()->id == $post->user_id || auth()->user()->is_admin == 1))
         <div class="mb-4 text-right">
             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info">編集する</a>
 
@@ -26,6 +28,7 @@
                 <button class="btn btn-danger">削除する</button>
             </form>
         </div>
+        @endif
         <!-- 件名 -->
         <h1 class="h4 mb-4">
             {{ $post->subject }}

@@ -71,6 +71,8 @@
                     </td>
                     <td class="text-nowrap">
                         <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a>
+                        {{-- 編集・削除ボタン表示の条件分岐 --}}
+                        @if(auth()->check() && (auth()->user()->id == $post->user_id || auth()->user()->is_admin == 1))
                         <p><a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
                         <p>
                             <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
@@ -78,6 +80,7 @@
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">削除</button>
                             </form>
+                        @endif
                         </p>
                     </td>
                 </tr>
