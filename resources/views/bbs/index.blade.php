@@ -1,6 +1,6 @@
 @extends('layouts.bbslayout')
 
-@section('title', 'LaravelPjt BBS 投稿の一覧ページ')
+@section('title', 'Tsunagu 投稿の一覧ページ')
 @section('keywords', 'キーワード1,キーワード2,キーワード3')
 @section('description', '投稿一覧ページの説明文')
 @section('pageCss')
@@ -22,6 +22,11 @@
 <div class="mt-4 mb-4">
     <a href="{{ route('bbs.create') }}" class="btn btn-primary">
         投稿の新規作成
+    </a>
+</div>
+<div class="mt-4 mb-4">
+    <a href="{{ route('dashboard') }}" class="btn btn-primary">
+        ダッシュボードへ
     </a>
 </div>
 @if (session('poststatus'))

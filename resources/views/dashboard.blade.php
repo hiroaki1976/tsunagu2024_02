@@ -14,4 +14,9 @@
             </div>
         </div>
     </div>
+    <div class="flex items-center">
+        <button class="mx-auto p-4 text-gray-900 bg-slate-300">
+            <a href="{{ route('bbs.index') }}">{{ __("掲示板へ") }}</a>
+        </button>
+    </div>
 </x-app-layout>
