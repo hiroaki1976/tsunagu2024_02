@@ -22,7 +22,7 @@ class PostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|max:40',
+            'officename' => 'required|max:40',
             'subject' => 'required|max:80',
             'message' => 'required|max:400',
             'category_id' => 'required|integer',

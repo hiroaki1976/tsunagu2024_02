@@ -1,6 +1,6 @@
 @extends('layouts.bbslayout')
 
-@section('title', 'LaravelPjt BBS 投稿編集ページ')
+@section('title', 'Tsunagu 投稿編集ページ')
 @section('keywords', 'キーワード1,キーワード2,キーワード3')
 @section('description', '投稿編集ページの説明文')
 @section('pageCss')
@@ -27,15 +27,15 @@
                         名前
                     </label>
                     <input
-                        id="name"
-                        name="name"
-                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        value="{{ old('name') ?: $post->name }}"
+                        id="officename"
+                        name="officename"
+                        class="form-control {{ $errors->has('officename') ? 'is-invalid' : '' }}"
+                        value="{{ old('officename') ?: $post->officename }}"
                         type="text"
                     >
-                    @if ($errors->has('name'))
+                    @if ($errors->has('officename'))
                         <div class="invalid-feedback">
-                            {{ $errors->first('name') }}
+                            {{ $errors->first('officename') }}
                         </div>
                     @endif
                 </div>

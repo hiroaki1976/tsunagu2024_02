@@ -25,16 +25,26 @@
                     <label for="subject">
                         名前
                     </label>
+                    @php
+                        $userName = '';
+                        if (auth()->guard('web')->check()) {
+                            $userName = auth()->guard('web')->user()->officename;
+                        } elseif (auth()->guard('admin')->check()) {
+                            $userName = auth()->guard('admin')->user()->officename;
+                        }
+                    @endphp
+
                     <input
-                        id="name"
-                        name="name"
-                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        value="{{ old('name') }}"
+                        id="officename"
+                        name="officename"
+                        class="form-control {{ $errors->has('officename') ? 'is-invalid' : '' }}"
+                        value="{{ old('officename', $userName) }}"
                         type="text"
                     >
-                    @if ($errors->has('name'))
+
+                    @if ($errors->has('officename'))
                         <div class="invalid-feedback">
-                            {{ $errors->first('name') }}
+                            {{ $errors->first('officename') }}
                         </div>
                     @endif
                 </div>

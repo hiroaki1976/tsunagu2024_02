@@ -61,7 +61,7 @@ class PostsController extends Controller
     public function store(PostRequest $request)
     {
         $savedata = [
-            'name' => $request->name,
+            'officename' => $request->officename,
             'subject' => $request->subject,
             'message' => $request->message,
             'category_id' => $request->category_id,

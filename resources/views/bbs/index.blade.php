@@ -62,7 +62,7 @@
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->category->name ?? '未分類' }}</td>
                     <td>{{ $post->created_at->format('Y.m.d') }}</td>
-                    <td>{{ $post->name }}</td>
+                    <td>{{ $post->officename }}</td>
                     <td>{{ $post->subject }}</td>
                     <td>{!! nl2br(e(Str::limit($post->message, 100))) !!}
                     @if ($post->comments->count() >= 1)

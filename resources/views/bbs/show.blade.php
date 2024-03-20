@@ -33,7 +33,7 @@
 
         <!-- 投稿情報 -->
         <div class="summary">
-            <p><span>{{ $post->name }}</span> / <time>{{ $post->updated_at->format('Y.m.d H:i') }}</time> / {{ $post->category->name ?? '未分類' }} / {{ $post->id }}</p>
+            <p><span>{{ $post->officename }}</span> / <time>{{ $post->updated_at->format('Y.m.d H:i') }}</time> / {{ $post->category->name ?? '未分類' }} / {{ $post->id }}</p>
         </div>
 
         <!-- 本文 -->
