@@ -37,7 +37,7 @@
                 </div>                
             </div>
             <div class="flex items-center justify-center min-h-screen">
-                <h1 class="text-center text-gray-800" style="font-size: 8rem">Tsunagu</h1>
+                <h1 class="text-center text-gray-800" style="font-size: 7rem">Tsunagu</h1>
                 <p style="font-size: 1.5rem">仕事を請け負いたい障がい者就労支援事業所と、仕事を依頼したい個人・団体・企業のマッチングサービス</p>
             </div>
         </div>
