@@ -32,7 +32,7 @@
                         class="form-control {{ $errors->has('officename') ? 'is-invalid' : '' }}"
                         value="{{ old('officename') ?: $post->officename }}"
                         type="text"
-                        readonly
+                        @if (!auth()->user()->is_admin) readonly @endif
                     >
                     @if ($errors->has('officename'))
                         <div class="invalid-feedback">
