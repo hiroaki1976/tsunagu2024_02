@@ -85,8 +85,9 @@
             id="name"
             name="name"
             class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-            value="{{ old('name') }}"
+            value="{{ old('name', auth()->user()->officename) }}"
             type="text"
+            readonly
         >
         @if ($errors->has('name'))
         <div class="invalid-feedback">

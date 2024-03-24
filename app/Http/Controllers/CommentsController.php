@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
 use App\Models\Comment;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -13,9 +14,12 @@ class CommentsController extends Controller
      */
     public function store(CommentRequest $request)
     {
+        // ログインユーザーのofficenameを取得
+        $officename = Auth::user()->officename;
+
         $savedata = [
             'post_id' => $request->post_id,
-            'name' => $request->name,
+            'name' => $officename, // officenameをコメントの名前として設定
             'comment' => $request->comment,
         ];
 
