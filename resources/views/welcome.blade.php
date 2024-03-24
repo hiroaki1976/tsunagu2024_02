@@ -40,8 +40,8 @@
             </div>
             <div class="flex items-center justify-center min-h-screen z-10">
                 <div class="text-center text-white px-4">
-                    <h1 class="text-center font-bold mb-4 text-gray-800" style="font-size: 7rem">Tsunagu</h1>
-                    <p class="font-bold mb-4" style="font-size: 1.5rem">仕事を請け負いたい障がい者就労支援事業所と、仕事を依頼したい個人・団体・企業のマッチングサービス</p>
+                    <h1 class="text-center font-bold mb-4 text-gray-800" style="font-size: 5rem">Tsunagu</h1>
+                    <p class="font-bold mb-4 sm:m-4" style="font-size: 1.5rem">仕事を請け負いたい障がい者就労支援事業所と、仕事を依頼したい個人・団体・企業のマッチングサービス</p>
                 </div>
             </div>
         </div>
