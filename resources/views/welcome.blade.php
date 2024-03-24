@@ -33,8 +33,8 @@
                 </div>
             @endif
     
-            <div class="absolute inset-x-0 bottom-0 p-4 sm:flex sm:items-end sm:justify-end">
-                <div class="text-sm text-gray-900">
+            <div class="absolute inset-x-0 bottom-0 p-4 sm:flex sm:items-end sm:justify-end ">
+                <div class="text-sm text-gray-900 sm:hidden ">
                     Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                 </div>                
             </div>
