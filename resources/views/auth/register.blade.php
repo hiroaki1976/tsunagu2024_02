@@ -8,14 +8,14 @@
         <!-- Office Name -->
         <div>
             <x-input-label for="officename" :value="__('Officename')" />
-            <x-text-input id="officename" class="block mt-1 w-full" type="text" name="officename" :value="old('officename')" required autofocus autocomplete="officename" placeholder="事業所名を入力して下さい" />
+            <x-text-input id="officename" class="block mt-1 w-full" type="text" name="officename" :value="old('officename')" required autofocus autocomplete="officename" placeholder="事業所名/個人・団体・企業名を入力して下さい" />
             <x-input-error :messages="$errors->get('officename')" class="mt-2" />
         </div>
 
         <!-- Post Code -->
         <div>
             <x-input-label for="postcode" :value="__('Postcode')" />
-            <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode')" autofocus autocomplete="postcode" placeholder="郵便番号" />
+            <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode')" autofocus autocomplete="postcode" placeholder="郵便番号で住所が自動入力されます" />
             <x-input-error :messages="$errors->get('postcode')" class="mt-2" />
         </div>
 
