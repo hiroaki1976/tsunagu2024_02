@@ -40,6 +40,7 @@
                         class="form-control {{ $errors->has('officename') ? 'is-invalid' : '' }}"
                         value="{{ old('officename', $userName) }}"
                         type="text"
+                        readonly
                     >
 
                     @if ($errors->has('officename'))

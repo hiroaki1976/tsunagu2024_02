@@ -14,7 +14,7 @@
 <div class="mt-4 mb-4">
     <form class="form-inline" method="GET" action="{{ route('bbs.index') }}">
         <div class="form-group">
-            <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前を入力してください">
+            <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前・件名・メッセージ">
         </div>
         <input type="submit" value="検索" class="btn btn-info ml-2">
     </form>

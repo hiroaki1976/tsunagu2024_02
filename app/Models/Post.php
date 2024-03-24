@@ -51,7 +51,8 @@ class Post extends Model
         }
     
         return $query->where(function ($query) use($searchword) {
-            $query->orWhere('name', 'like', "%{$searchword}%")
+            $query->orWhere('officename', 'like', "%{$searchword}%")
+                ->orWhere('subject', 'like', "%{$searchword}%")
                 ->orWhere('message', 'like', "%{$searchword}%");
         });
     }
